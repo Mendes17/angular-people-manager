@@ -1,27 +1,50 @@
-# AngularPeopleManager
+# Avaliação Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+## Descrição
+Este projeto faz parte do processo seletivo da empresa Minsait. A aplicação desenvolvida em Angular permite listar, cadastrar, editar e excluir pessoas e seus contatos, seguindo boas práticas e padrões recomendados.
 
-## Development server
+## Funcionalidades
+- **Listagem de Pessoas:** Apresenta uma tabela com os campos: ID, Nome, Endereço, CEP, UF, Contato e ações.
+- **Cadastro de Pessoas:** Permite adicionar uma nova pessoa e seu contato.
+- **Edição de Pessoas:** Possibilita alterar os dados de uma pessoa cadastrada.
+- **Exclusão de Pessoas:** Opção de remover um registro.
+- **Busca automática de endereço pelo CEP:** Integração com a API [ViaCEP](https://viacep.com.br/) para preenchimento automático do endereço.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tecnologias Utilizadas
+- **Angular 16.2.16**
+- **Node JS 18.20.6**
+- **TypeScript**
+- **HTML5 & SCCS**
+- **Angular Material, Bootstrap e SweetAlert2**
+- **API [api-controle-de-contatos](https://github.com/Mendes17/api-controle-de-contatos.git) v1.0.1
+- **API ViaCEP** (para busca automática de endereço)
 
-## Code scaffolding
+## Instruções para Execução
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Rode a aplicação api-controle-de-contatos na sua versão 1.0.1, explicação de como [aqui](https://github.com/Mendes17/api-controle-de-contatos/new/master?filename=README.md)
 
-## Build
+2. Clone este repositório:
+   ```bash
+   git clone https://github.com/Mendes17/angular-people-manager.git
+   ```
+3. Navegue até a pasta do projeto:
+   ```bash
+   cd nome-do-projeto
+   ```
+4. Instale as dependências:
+   ```bash
+   npm install
+   ```
+5. Execute o servidor de desenvolvimento:
+   ```bash
+   ng serve
+   ```
+6. Acesse a aplicação no navegador:
+   ```
+   http://localhost:4200
+   ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+---
+**Desenvolvido por [Henrique Cerqueira Mendes] Full Stack Developer**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

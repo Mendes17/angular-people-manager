@@ -1,0 +1,8 @@
+<ng-container *ngIf="people$ | async as people">
+  <app-table [people$]="people$" [callback]="getPeopleContact" [refreshCallback]="refreshCallback.bind(this)"
+    *ngIf="people.length >= 1"></app-table>
+  <div class="text-center" *ngIf="people.length === 0">
+    <h1>Tabela vazia</h1>
+    <button class="btn btn-primary" routerLink="pessoas/register">Registrar uma pessoa</button>
+  </div>
+</ng-container>

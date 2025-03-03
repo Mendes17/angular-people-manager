@@ -1,0 +1,37 @@
+<div class="container mt-5 w-100">
+  <h2>Registro de Pessoa</h2>
+  <form #form="ngForm" class="needs-validation" novalidate>
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="person.nome" maxlength="255"
+        placeholder="Ex: João" appNoNumbers appNoSpecialChar>
+    </div>
+
+    <div class="mb-3">
+      <label for="cep" class="form-label">CEP</label>
+      <input type="text" class="form-control" id="cep" name="cep" (input)="formatarCep($event)" [(ngModel)]="person.cep"
+        (blur)="buscarCep()" maxlength="9" placeholder="Ex: 12345-678" appNoWord>
+    </div>
+
+    <div class="mb-3">
+      <label for="endereco" class="form-label">Endereço</label>
+      <input type="text" class="form-control" id="endereco" name="endereco" [(ngModel)]="person.endereco"
+        maxlength="255" placeholder="Cidade, Rua, N°">
+    </div>
+
+    <div class="mb-3">
+      <label for="cidade" class="form-label">Cidade</label>
+      <input type="text" class="form-control" id="cidade" name="cidade" [(ngModel)]="person.cidade" maxlength="255"
+        placeholder="Ex: Sorocaba" appNoNumbers appNoSpecialChar>
+    </div>
+
+    <div class="mb-3">
+      <label for="uf" class="form-label">UF</label>
+      <select class="form-select" id="uf" name="uf" [(ngModel)]="person.uf">
+        <option value="">Selecione</option>
+        <option *ngFor="let estado of estados" [value]="estado">{{ estado }}</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="personRegister()">Registrar Pessoa</button>
+  </form>
+</div>

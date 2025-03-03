@@ -1,0 +1,29 @@
+<h2 class="mt-3 m-3">Quer salvar Contato?</h2>
+<mat-dialog-actions class="d-flex flex-column" open={true}>
+  <mat-dialog-content class="w-100">
+    <form #form="ngForm" class="needs-validation" novalidate>
+
+      <div class="mb-3">
+        <label for="contactType" class="form-label">Tipo de contato</label>
+        <select class="form-select" id="contactType" name="contactType" [(ngModel)]="contact.tipoContato" (change)="tamanhoInput()">
+          <option value="">Selecione</option>
+          <option *ngFor="let contact of contactType">{{ contact }}</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="nome" class="form-label">{{
+          type === 'TELEFONE' ? 'Digite o seu número de Telefone:' :
+          type === 'CELULAR' ? 'Digite o seu número de Celular:' :
+          type === 'EMAIL' ? 'Digite o seu Email:' : 'Selecione um tipo de contato' }}</label>
+        <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="contact.contato"
+          (input)="formatarContato($event)" [attr.maxLength]="maxLength">
+      </div>
+
+      <div class="w-100 d-flex justify-content-between">
+        <button class="btn btn-danger" (click)="cancel()">Não quero salvar contato</button>
+        <button class="btn btn-success" (click)="contactRegister()">Salvar dados</button>
+      </div>
+    </form>
+  </mat-dialog-content>
+</mat-dialog-actions>

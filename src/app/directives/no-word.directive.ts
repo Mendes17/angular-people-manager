@@ -11,15 +11,13 @@ export class NoWordDirective {
     const input = event.target as HTMLInputElement;
     const value = input.value;
 
-    // Remove caracteres que não são números ou hífens
     input.value = value.replace(/[^0-9-]/g, '');
   }
 
-  // Bloqueia a tecla de caracteres que não são números ou hífens no evento keydown
   @HostListener('keydown', ['$event']) onKeyDown(event: KeyboardEvent) {
     const key = event.key;
 
-    // Permite apenas teclas que são números, hífens ou teclas de controle (Backspace, Delete, Tab, etc.)
+
     if (
       !this.regex.test(key) &&
       key !== 'Backspace' &&
